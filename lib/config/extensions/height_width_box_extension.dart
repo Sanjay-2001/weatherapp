@@ -7,6 +7,6 @@ extension HeightWidthBoxExtension on BuildContext {
   }
 
   SizedBox widthBox(double w) {
-    return SizedBox(height: getSize.width * w);
+    return SizedBox(width: getSize.width * w);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'common_libs.dart';
 
 void main() {
@@ -10,15 +11,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: ColorPalette.iris,
-        colorScheme: ColorScheme.fromSeed(seedColor: ColorPalette.iris),
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => HomeProvider())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          scaffoldBackgroundColor: ColorPalette.iris,
+          colorScheme: ColorScheme.fromSeed(seedColor: ColorPalette.iris),
+        ),
+        initialRoute: Routes.onboarding,
+        onGenerateRoute: Pages.onGeneratingRoute,
       ),
-      initialRoute: Routes.onboarding,
-      onGenerateRoute: Pages.onGeneratingRoute,
     );
   }
 }

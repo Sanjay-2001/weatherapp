@@ -9,4 +9,6 @@ class ColorPalette {
   static const platinum = Color(0xffE7E5E5);
   static const cultured = Color(0xffF9F8F8);
   static const isablline = Color(0xffF1EFEF);
+  static const titanWhite = Color(0xffEFEEF9);
+  static const indicator = Color(0xffF7F6FC);
 }
